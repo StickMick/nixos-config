@@ -23,5 +23,10 @@
     neovim
     jetbrains-toolbox
     git
+    gh
+    zig
+    nodejs
+    dotnet-sdk_8
+    dotnet-runtime_8
   ];
 }
