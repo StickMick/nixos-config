@@ -7,24 +7,27 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
       ./audio.nix
+      ./fonts.nix
     ];
 
+  nix.settings.experimental-features = [ "nix-command" ];
 
   # Bootloader.
   boot = {
-    kernelParams = [ "acpi_rev_override" "mem_sleep_default=deep" "intel_iommu=igfx_off" "nvidia-drm.modeset=1" ];
-    kernelPackages = pkgs.linuxPackages_5_4;
-    extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+    # kernelParams = [ "acpi_rev_override" "mem_sleep_default=deep" "intel_iommu=igfx_off" "nvidia-drm.modeset=1" ];
+    # kernelPackages = pkgs.linuxPackages_5_4;
 
+    extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+    # blacklistedKernelModules = [ "nouveau" "nvidia_drm" "nvidia_modeset" "nvidia" ];
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
   };
 
-  # boot.kernelParams = [ "video=HDMI-A-2:3440x1440@60" ];
+  boot.kernelParams = [ "video=HDMI-A-2:3440x1440@60" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -84,8 +87,10 @@
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
-    WLR_DRM_NO_ATOMIC = "1";
   };
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   # Enable the X11 windowing system.
   services.xserver = {
@@ -93,8 +98,11 @@
   };
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
+
+  services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
 
 
   ## NVIDIA 
@@ -135,6 +143,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -181,8 +190,15 @@
     networkmanagerapplet
   ];
 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  nixpkgs = {
+    overlays = [
+      (self: super: {
+        waybar = super.waybar.overrideAttrs (oldAttrs: {
+          mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true" "-Dmpd=enabled"];
+        });
+      })
+    ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
