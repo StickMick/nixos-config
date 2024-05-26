@@ -28,5 +28,14 @@
     nodejs
     dotnet-sdk_8
     dotnet-runtime_8
+
+    rustc
+    cargo
+
+    gcc
+    zip
+    unzip
+
+    killall
   ];
 }

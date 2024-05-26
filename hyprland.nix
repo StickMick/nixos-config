@@ -88,6 +88,15 @@
     kitty
     rofi-wayland
     networkmanagerapplet
+
+    # Wallpaper and colour
+    pywal
+    python3
+
+    # Screenshots
+    grim
+    slurp
+    wl-clipboard
   ];
 
   xdg = {
