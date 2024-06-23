@@ -20,14 +20,24 @@
     discord
     spotify
 
+    krita
+
     neovim
     jetbrains-toolbox
     git
     gh
     zig
     nodejs
-    dotnet-sdk_8
-    dotnet-runtime_8
+    # dotnet-sdk_8
+    # dotnet-runtime_8
+    dotnet-sdk_7
+    dotnet-runtime_7
+    vscode
+    xclip
+    ripgrep
+    gnumake
+    wget
+    fd
 
     rustc
     cargo

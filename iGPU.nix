@@ -10,6 +10,7 @@
       /etc/nixos/hardware-configuration.nix
       ./audio.nix
       ./fonts.nix
+      ./programs.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" ];
@@ -80,6 +81,11 @@
   # Gnome display manager
   services.xserver.displayManager.gdm.enable = true;
 
+  services.xserver = {
+    enable = true;
+    videoDrivers = [ "nvidia" ];
+  };
+
   # Configure keymap in X11
   services.xserver = {
     layout = "au";
@@ -124,6 +130,8 @@
     discord
     spotify
     jetbrains-toolbox
+
+    kitty
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
