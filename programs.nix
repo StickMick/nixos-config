@@ -43,6 +43,7 @@ in
     gnumake
     wget
     fd
+    git-credential-oauth
 
     gcc
     zip
