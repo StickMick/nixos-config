@@ -1,6 +1,13 @@
 
 { config, pkgs, ... }:
 
+let
+  unstable = import <nixos-unstable> { 
+      config = { 
+        allowUnfree = true; 
+      }; 
+  };
+in 
 {
   # Install firefox.
   programs.firefox.enable = true;
@@ -28,8 +35,6 @@
     gh
     zig
     nodejs
-    # dotnet-sdk_8
-    # dotnet-runtime_8
     dotnet-sdk_7
     dotnet-runtime_7
     vscode
@@ -38,9 +43,6 @@
     gnumake
     wget
     fd
-
-    rustc
-    cargo
 
     gcc
     zip
