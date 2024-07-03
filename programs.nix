@@ -44,6 +44,7 @@ in
     wget
     fd
     git-credential-oauth
+    lazygit
 
     gcc
     zip
