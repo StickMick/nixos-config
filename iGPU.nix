@@ -11,6 +11,7 @@
       ./audio.nix
       ./fonts.nix
       ./programs.nix
+      ./virtualization.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" ];
@@ -27,11 +28,6 @@
   boot.kernelParams = [ "video=HDMI-A-2:3440x1440@60" ];
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -76,10 +72,13 @@
   };
 
   # Plasma5 desktop
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.desktopManager.plasma6.enable = true;
 
-  # Gnome display manager
-  services.xserver.displayManager.gdm.enable = true;
+  #sddm display manager
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
 
   services.xserver = {
     enable = true;
@@ -132,6 +131,7 @@
     discord
     spotify
     jetbrains-toolbox
+    libreoffice
 
     kitty
   ];

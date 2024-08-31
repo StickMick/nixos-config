@@ -27,6 +27,8 @@ in
     discord
     spotify
 
+    runelite
+
     krita
 
     neovim
@@ -45,6 +47,13 @@ in
     fd
     git-credential-oauth
     lazygit
+
+    rustc
+    cargo
+    rust-analyzer
+    rustup
+
+    android-studio
 
     gcc
     zip
