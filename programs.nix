@@ -15,6 +15,10 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  services.flatpak.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.config.common.default = "gtk";
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
@@ -22,10 +26,13 @@ in
     gamescopeSession.enable = true;
   };
 
+  programs.noisetorch.enable = true;
+
   environment.systemPackages = with pkgs; [
     steam
     discord
     spotify
+    obsidian
 
     runelite
 
