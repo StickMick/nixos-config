@@ -21,6 +21,8 @@
     WLR_DRM_NO_ATOMIC = "1";
   };
 
+  security.pam.services.swaylock = {};
+
   environment.systemPackages = with pkgs; [
     waybar
     dunst
@@ -38,5 +40,9 @@
     grim
     slurp
     wl-clipboard
+
+    #screensaver
+    swayidle
+    swaylock
   ];
 }
