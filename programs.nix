@@ -9,6 +9,7 @@ let
   };
 in 
 {
+  
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -64,6 +65,8 @@ in
     gcc
     zip
     unzip
+
+    wezterm
 
     killall
   ];

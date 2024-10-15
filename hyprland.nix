@@ -23,6 +23,9 @@
 
   security.pam.services.swaylock = {};
 
+  programs.xfconf.enable = true;
+  programs.thunar.enable = true;
+
   environment.systemPackages = with pkgs; [
     waybar
     dunst

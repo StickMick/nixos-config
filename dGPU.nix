@@ -15,7 +15,7 @@
       ./hyprland.nix
     ];
 
-  nix.settings.experimental-features = [ "nix-command" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot = {
