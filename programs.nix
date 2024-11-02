@@ -55,11 +55,6 @@ in
     git-credential-oauth
     lazygit
 
-    rustc
-    cargo
-    rust-analyzer
-    rustup
-
     android-studio
 
     gcc
@@ -67,6 +62,8 @@ in
     unzip
 
     wezterm
+
+    bambu-studio
 
     killall
   ];

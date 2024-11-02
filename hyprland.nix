@@ -13,6 +13,8 @@
     xwayland.enable = true;
   };
 
+  environment.sessionVariables.MOZ_ENABLE_WAYLAND = "1";
+
   security.pam.services.sddm.enableKwallet = true;
 
   environment.sessionVariables = {
@@ -40,9 +42,7 @@
     python3
 
     # Screenshots
-    grim
-    slurp
-    wl-clipboard
+    hyprshot
 
     #screensaver
     swayidle
