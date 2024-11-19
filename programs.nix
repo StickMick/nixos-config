@@ -66,5 +66,7 @@ in
     bambu-studio
 
     killall
+
+    google-chrome
   ];
 }

@@ -13,6 +13,7 @@
       ./programs.nix
       ./virtualization.nix
       ./hyprland.nix
+      ./services.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -101,7 +102,7 @@
   users.users.stick = {
     isNormalUser = true;
     description = "Michael Galloway";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "dialout" ];
     packages = with pkgs; [
       kate
     #  thunderbird
