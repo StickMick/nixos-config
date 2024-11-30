@@ -11,6 +11,7 @@
       ./audio.nix
       ./fonts.nix
       ./programs.nix
+      ./programming.nix
       ./virtualization.nix
       ./hyprland.nix
       ./services.nix

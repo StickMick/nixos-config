@@ -23,7 +23,8 @@
     WLR_DRM_NO_ATOMIC = "1";
   };
 
-  security.pam.services.swaylock = {};
+  security.pam.services.hyprlock = {
+  };
 
   programs.xfconf.enable = true;
   programs.thunar.enable = true;
@@ -44,8 +45,11 @@
     # Screenshots
     hyprshot
 
-    #screensaver
-    swayidle
-    swaylock
+    # Lock Screen
+    hyprlock
+
+    # Idle timeout
+    hypridle
+
   ];
 }

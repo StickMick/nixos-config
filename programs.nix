@@ -33,40 +33,13 @@ in
     discord
     spotify
     obsidian
-
     runelite
-
     krita
-
-    neovim
-    jetbrains-toolbox
-    git
-    gh
-    zig
-    nodejs
-    dotnet-sdk_7
-    dotnet-runtime_7
-    vscode
-    xclip
-    ripgrep
-    gnumake
-    wget
-    fd
-    git-credential-oauth
-    lazygit
-
-    android-studio
-
     gcc
     zip
     unzip
-
-    wezterm
-
     bambu-studio
-
     killall
-
     google-chrome
   ];
 }
