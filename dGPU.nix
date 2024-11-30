@@ -14,6 +14,7 @@
       ./virtualization.nix
       ./hyprland.nix
       ./services.nix
+      # ./grub.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
