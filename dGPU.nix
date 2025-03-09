@@ -12,7 +12,7 @@
       ./fonts.nix
       ./programs.nix
       ./programming.nix
-      ./virtualization.nix
+      # ./virtualization.nix
       ./hyprland.nix
       ./services.nix
       # ./grub.nix
@@ -57,7 +57,6 @@
   hardware = {
     opengl = {
       enable = true;
-      driSupport = true;
       driSupport32Bit = true;
     };
     nvidia = {
@@ -98,7 +97,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.stick = {

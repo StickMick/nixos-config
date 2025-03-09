@@ -8,6 +8,7 @@ let
   };
 in 
 {
+# Networking
   services.avahi = {
     enable = true;
     nssmdns4 = true;

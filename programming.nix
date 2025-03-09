@@ -18,9 +18,6 @@ in
     git
     gh
     zig
-    nodejs
-    dotnet-sdk_7
-    dotnet-runtime_7
     vscode
     xclip
     ripgrep
@@ -32,5 +29,7 @@ in
     android-studio
     gcc
     wezterm
+
+    unityhub
   ];
 }

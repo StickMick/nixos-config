@@ -11,7 +11,11 @@
       ./audio.nix
       ./fonts.nix
       ./programs.nix
-      ./virtualization.nix
+      ./programming.nix
+      # ./virtualization.nix
+      # ./hyprland.nix
+      ./services.nix
+      # ./grub.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -53,7 +57,6 @@
   hardware = {
     opengl = {
       enable = true;
-      driSupport = true;
       driSupport32Bit = true;
     };
     nvidia = {
@@ -64,7 +67,10 @@
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
       prime = {
-        sync.enable = true;
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
         intelBusId = "PCI:0:2:0";
 	nvidiaBusId = "PCI:1:0:0";
       };
@@ -98,6 +104,8 @@
   # services.xserver.libinput.enable = true;
 
   virtualisation.docker.enable = true;
+  hardware.nvidia-container-toolkit.enable = true;
+  virtualisation.docker.daemon.settings.features.cdi = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.stick = {

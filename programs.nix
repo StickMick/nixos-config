@@ -41,5 +41,24 @@ in
     bambu-studio
     killall
     google-chrome
+
+    lutris
+    (lutris.override {
+      extraLibraries =  pkgs: [
+        # List library dependencies here
+      ];
+      extraPkgs = pkgs: [
+        # List package dependencies here
+      ];
+    })
+    wine
+
+    #Terminal
+    ghostty
+    tmux
+
+    #System Monitor
+    btop
+    nvtopPackages.full
   ];
 }
