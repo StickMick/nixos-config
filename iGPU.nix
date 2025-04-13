@@ -12,7 +12,7 @@
       ./fonts.nix
       ./programs.nix
       ./programming.nix
-      # ./virtualization.nix
+      ./virtualization.nix
       # ./hyprland.nix
       ./services.nix
       # ./grub.nix
