@@ -33,14 +33,12 @@ in
     discord
     spotify
     obsidian
-    runelite
     krita
     gcc
     zip
     unzip
     bambu-studio
-    killall
-    google-chrome
+    unityhub
 
     lutris
     (lutris.override {
