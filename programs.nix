@@ -27,6 +27,11 @@ in
     gamescopeSession.enable = true;
   };
 
+  programs.git = {
+    enable = true;
+    package = pkgs.gitFull;
+    config.credential.helper = "libsecret";
+  };
 
   environment.systemPackages = with pkgs; [
     steam
@@ -58,5 +63,9 @@ in
     #System Monitor
     btop
     nvtopPackages.full
+
+    #git
+    git
+    libsecret
   ];
 }
