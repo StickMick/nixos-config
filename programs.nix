@@ -27,12 +27,6 @@ in
     gamescopeSession.enable = true;
   };
 
-  programs.git = {
-    enable = true;
-    package = pkgs.gitFull;
-    config.credential.helper = "libsecret";
-  };
-
   environment.systemPackages = with pkgs; [
     steam
     discord
@@ -42,7 +36,8 @@ in
     gcc
     zip
     unzip
-    bambu-studio
+    # bambu-studio
+    orca-slicer
     unityhub
 
     lutris
@@ -60,12 +55,14 @@ in
     ghostty
     tmux
 
+    neovim
+
     #System Monitor
     btop
     nvtopPackages.full
 
     #git
     git
-    libsecret
+    git-credential-manager
   ];
 }
